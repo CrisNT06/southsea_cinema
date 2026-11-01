@@ -15,7 +15,29 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Container(child: const SizedBox.shrink()),
+      body: Container(
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Top Gun: Maverick', style: cinemaHeaderStyle),
+            const SizedBox(height: 10),
+            const Text('Runtime: 130 minutes'),
+            const SizedBox(height: 10),
+            const Text('Captain Pete "Maverick" Mitchell returns after more '
+            'than 30 years as a top Navy aviator to train an elite group of Top Gun graduates ' 
+            'for a dangerous, low-altitude strike on an unsanctioned foreign uranium enrichment plant.'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                print('Add to order button pressed');
+              },
+              child: const Text('Add to order'),
+              
+            )
+          ]
+        )
+      ),
     );
   }
 }
