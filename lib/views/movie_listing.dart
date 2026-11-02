@@ -11,6 +11,7 @@ class MovieListing extends StatefulWidget {
 
 class _MovieListingState extends State<MovieListing> {
   int _ticketQuantity = 1;
+  String _bookingMessage = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,17 +23,16 @@ class _MovieListingState extends State<MovieListing> {
       ),
       drawer: const NavDrawer(),
       body: Container(
-        padding: const EdgeInsets.all(18),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          padding: const EdgeInsets.all(18),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Text('Top Gun: Maverick', style: cinemaHeaderStyle),
             const SizedBox(height: 10),
             const Text('Runtime: 130 minutes'),
             const SizedBox(height: 10),
             const Text('Captain Pete "Maverick" Mitchell returns after more '
-            'than 30 years as a top Navy aviator to train an elite group of Top Gun graduates ' 
-            'for a dangerous, low-altitude strike on an unsanctioned foreign uranium enrichment plant.'),
+                'than 30 years as a top Navy aviator to train an elite group of Top Gun graduates '
+                'for a dangerous, low-altitude strike on an unsanctioned foreign uranium enrichment plant.'),
             const SizedBox(height: 20),
             DropdownMenu<int>(
               initialSelection: _ticketQuantity,
@@ -55,17 +55,20 @@ class _MovieListingState extends State<MovieListing> {
             const SizedBox(height: 10),
             Text('Tickets selecetd: $_ticketQuantity'),
             const SizedBox(height: 20),
-
             ElevatedButton(
               onPressed: () {
-                print('Add to order button pressed');
+                setState(() {
+                  _bookingMessage =
+                      'Added $_ticketQuantity tickets to the order';
+                });
+                print(_bookingMessage);
               },
               child: const Text('Add to order'),
-              
-            )
-          ]
-        )
-      ),
+            ),
+            const SizedBox(height: 10),
+            Text(_bookingMessage),
+          ]) //
+          ),
     );
   }
 }
