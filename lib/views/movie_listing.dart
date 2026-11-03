@@ -53,7 +53,7 @@ class _MovieListingState extends State<MovieListing> {
               ],
             ),
             const SizedBox(height: 10),
-            Text('Tickets selecetd: $_ticketQuantity'),
+            Text('Tickets selected: $_ticketQuantity'),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
