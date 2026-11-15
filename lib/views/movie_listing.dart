@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/models/movie.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+
+  const MovieListing({super.key, required this.movie});
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -26,14 +29,14 @@ class _MovieListingState extends State<MovieListing> {
           padding: const EdgeInsets.all(18),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Text('Top Gun: Maverick', style: cinemaHeaderStyle),
-            const SizedBox(height: 10),
-            const Text('Runtime: 130 minutes'),
-            const SizedBox(height: 10),
-            const Text('Captain Pete "Maverick" Mitchell returns after more '
-                'than 30 years as a top Navy aviator to train an elite group of Top Gun graduates '
-                'for a dangerous, low-altitude strike on an unsanctioned foreign uranium enrichment plant.'),
-            const SizedBox(height: 20),
+                Text(widget.movie.title, style: cinemaHeaderStyle),
+                const SizedBox(height: 10),
+                Text('Rated ${widget.movie.ageRating}'),
+                const SizedBox(height: 10),
+                Text(widget.movie.synopsis),
+                const SizedBox(height: 10),
+                Text(widget.movie.screeningTime),
+                const SizedBox(height: 20),
             DropdownMenu<int>(
               initialSelection: _ticketQuantity,
               onSelected: (int? value) {

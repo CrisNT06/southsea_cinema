@@ -22,7 +22,7 @@ class MovieRepository {
                   'follows Kōichi Shikishima, a disgraced former kamikaze '
                   'pilot paralyzed by his guilt of surviving, where he steps '
                   'up to defend his country when a giant radiation-mutated '
-                  'Godzilla attacks.'
+                  'Godzilla attacks.',
         ageRating: '12A',
         screeningTime: 'Thursday 26 Nov 2026, 12:00',
         price: 10.00,

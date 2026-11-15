@@ -4,7 +4,7 @@ class Movie {
   final String synopsis;
   final String ageRating;
   final String screeningTime;
-  final String price;
+  final double price;
   final String posterPath;
 
   const Movie({
