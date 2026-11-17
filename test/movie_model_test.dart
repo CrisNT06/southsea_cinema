@@ -23,7 +23,8 @@ void main() {
       expect(movie.posterPath, 'assets/images/film.jpeg');
     });
 
-    test('formattedPrice shows up to two decimal points for whole-pound price', () {
+    test('formattedPrice shows up to two decimal points for whole-pound price',
+        () {
       const movie = Movie(
         id: 'test1',
         title: 'Test 1',
@@ -37,7 +38,8 @@ void main() {
       expect(movie.formattedPrice, '£9.00');
     });
 
-    test('formattedPrice shows up to two decimal points for price with pence', () {
+    test('formattedPrice shows up to two decimal points for price with pence',
+        () {
       const movie = Movie(
         id: 'test2',
         title: 'Test 2',
